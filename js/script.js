@@ -22,6 +22,7 @@
 	// back to top & scroll animation
 
 	var navBar       = $('.navbar'),
+		anim  		 = $('.alert-message'),
 		anim1        = $('.animation_1'),
 		anim2        = $('.animation_2'),
 		anim3 		 = $('.icons'),
@@ -49,6 +50,7 @@
 
 		if (window.matchMedia("(min-width: 768px)").matches) {
 
+			anim.hide();
 			anim1.hide();
 			anim2.hide();
 			anim3.hide();
@@ -59,6 +61,8 @@
 
 				if (win.scrollTop() >= 1) navBar.addClass('navbar-scroll');
 				else navBar.removeClass('navbar-scroll');
+
+				if (win.scrollTop() >= 600) anim.fadeIn(1500);
 
 				if (win.scrollTop() >= 700) anim1.show().addClass('animated bounceInLeft');
 
